@@ -119,49 +119,6 @@
             transform: translate(5px,5px);
             box-shadow: 2px 2px 0 #784f2e;
         }
-        .admin {
-            background: #4d7352;
-            padding: 30px;
-            border-radius: 70px 20px 20px 70px;
-            margin-left: 20px;
-        }
-        .admin input, .admin textarea {
-            width: 100%;
-            font-size: 26px;
-            padding: 15px;
-            border-radius: 50px;
-            border: 4px solid #3f5e3f;
-            margin-bottom: 15px;
-        }
-        .admin textarea {
-            min-height: 150px;
-        }
-        .file-label {
-            background: #faa75e;
-            display: inline-block;
-            font-size: 30px;
-            padding: 15px 30px;
-            border-radius: 60px;
-            border: 5px solid #ffeeaa;
-            font-weight: bold;
-            box-shadow: 5px 5px 0 #8f5e31;
-            cursor: pointer;
-        }
-        #fileInput {
-            display: none;
-        }
-        .add-btn {
-            background: #ffb042;
-            font-size: 40px;
-            padding: 20px;
-            border-radius: 80px;
-            border: 5px solid #ffffaa;
-            width: 100%;
-            font-weight: bold;
-            box-shadow: 7px 7px 0 #a56a2c;
-            cursor: pointer;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
@@ -185,51 +142,18 @@
         <button class="nav-btn" id="prevBtn">◀ НАЗАД</button>
         <button class="nav-btn" id="nextBtn">ВПЕРЁД ▶</button>
     </div>
-
-    <!-- АДМИНКА -->
-    
 </div>
 
 <script>
 (function() {
-    let stories = JSON.parse(localStorage.getItem('crypto_stories')) || [
-        { title: "📖 МАЛЬЧИК, КОТОРЫЙ НЕ БОЯЛСЯ РЖАВЧИНЫ", text: "В одном городе, где дома были высокими, а небо — узким, жил мальчик по имени Тим. Ему было 5 лет, и он очень любил гулять с дедушкой.
-
-Дедушка был старый, но руки у него были золотые. Он мог починить всё: часы, стул, даже сломанный зонтик.
-
-Однажды они пошли гулять и зашли в странное место — там, где никто не ходил. Там пахло пылью, а вокруг лежали старые железки, колёса, провода и даже одна дверь без дома.
-
-— Дедушка, что это? — спросил Тим.
-— Это свалка, — ответил дед. — Но я называю её «кладовка».
-— А почему?
-— Потому что здесь лежит то, что может стать чем-то новым.
-
-Тим посмотрел на ржавое колесо и спросил:
-— А это может стать новым?
-— Может, — улыбнулся дед. — Если не бояться.
-
-И они взяли колесо домой. Дед достал инструменты, и они вместе почистили, покрасили, прикрутили… И получилась… машинка! Маленькая, но самая настоящая. Тим катал её по полу и смеялся.
-
-С тех пор каждые выходные они ходили в «кладовку». И каждый раз находили что-то, что можно было починить. Однажды — сломанный стул. В другой раз — лампу без света. А один раз — даже старый будильник, который зазвонил через неделю.
-
-Тим перестал бояться:
-
-грязи
-
-ржавчины
-
-того, что сломалось
-
-Он понял: если не бояться и попробовать починить — может получиться что-то классное.
-
-", image: "" },
-        { title: "☁️ Мечта", text: "Облако было похоже на хламолёт.", image: "" },
-            { title: "☁️ Мечта", text: "Облако было похоже на хламолёт.", image: "" },
-            { title: "☁️ Мечта", text: "Облако было похоже на хламолёт.", image: "" }
+    let stories = [
+        { title: "📖 МАЛЬЧИК, КОТОРЫЙ НЕ БОЯЛСЯ РЖАВЧИНЫ", text: "В одном городе, где дома были высокими, а небо — узким, жил мальчик по имени Тим. Ему было 5 лет, и он очень любил гулять с дедушкой.\n\nДедушка был старый, но руки у него были золотые. Он мог починить всё: часы, стул, даже сломанный зонтик.\n\nОднажды они пошли гулять и зашли в странное место — там, где никто не ходил. Там пахло пылью, а вокруг лежали старые железки, колёса, провода и даже одна дверь без дома.\n\n— Дедушка, что это? — спросил Тим.\n— Это свалка, — ответил дед. — Но я называю её «кладовка».\n— А почему?\n— Потому что здесь лежит то, что может стать чем-то новым.\n\nТим посмотрел на ржавое колесо и спросил:\n— А это может стать новым?\n— Может, — улыбнулся дед. — Если не бояться.\n\nИ они взяли колесо домой. Дед достал инструменты, и они вместе почистили, покрасили, прикрутили… И получилась… машинка! Маленькая, но самая настоящая. Тим катал её по полу и смеялся.\n\nС тех пор каждые выходные они ходили в «кладовку». И каждый раз находили что-то, что можно было починить. Однажды — сломанный стул. В другой раз — лампу без света. А один раз — даже старый будильник, который зазвонил через неделю.\n\nТим перестал бояться:\n- грязи\n- ржавчины\n- того, что сломалось\n\nОн понял: если не бояться и попробовать починить — может получиться что-то классное.", image: "" },
+        { title: "☁️ Мечта 1", text: "Облако было похоже на хламолёт.", image: "" },
+        { title: "☁️ Мечта 2", text: "Облако было похоже на хламолёт.", image: "" },
+        { title: "☁️ Мечта 3", text: "Облако было похоже на хламолёт.", image: "" }
     ];
 
     let currentIdx = 0;
-    let pendingBase64 = "";
 
     function renderToc() {
         let toc = document.getElementById('tocGrid');
@@ -259,8 +183,6 @@
 
     function saveStories() {
         localStorage.setItem('crypto_stories', JSON.stringify(stories));
-        renderToc();
-        displayStory();
     }
 
     document.getElementById('prevBtn').onclick = () => {
@@ -271,34 +193,6 @@
     document.getElementById('nextBtn').onclick = () => {
         if (!stories.length) return;
         currentIdx = (currentIdx + 1) % stories.length;
-        displayStory();
-    };
-
-    document.getElementById('fileInput').onchange = function(e) {
-        let file = e.target.files[0];
-        if (!file) return;
-        let reader = new FileReader();
-        reader.onload = function(ev) {
-            pendingBase64 = ev.target.result;
-            document.getElementById('base64preview').innerHTML = "✅ Фото готово (base64)";
-        };
-        reader.readAsDataURL(file);
-    };
-
-    document.getElementById('addStoryBtn').onclick = function() {
-        let title = document.getElementById('storyTitleInput').value.trim();
-        let text = document.getElementById('storyTextInput').value.trim();
-        if (!title || !text) { alert("Введи название и текст"); return; }
-
-        let newStory = { title, text, image: pendingBase64 || "" };
-        stories.push(newStory);
-        saveStories();
-
-        document.getElementById('storyTitleInput').value = "";
-        document.getElementById('storyTextInput').value = "";
-        pendingBase64 = "";
-        document.getElementById('base64preview').innerHTML = "Фото будет внутри файла";
-        currentIdx = stories.length - 1;
         displayStory();
     };
 
