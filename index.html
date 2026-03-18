@@ -2,128 +2,185 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>📖 Книга рассказов CryptoCat ромы</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📖 Книга рассказов с музыкой ✦ CryptoCat</title>
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
         body {
-            background: #1f4f2b;
+            background: linear-gradient(145deg, #1a3a2a, #0e2b1a);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
+            align-items: center;
             padding: 20px;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', 'Arial', system-ui, sans-serif;
         }
         .book {
             max-width: 1300px;
             width: 100%;
-            background: #fcf5e6;
-            border-radius: 40px 20px 20px 40px;
-            padding: 30px 20px 30px 40px;
-            box-shadow: 0 0 0 15px #ad8b67, 0 20px 30px black;
-            border: 5px solid #e5c9a7;
+            background: #fcf3e0;
+            background-image: radial-gradient(circle at 30% 40%, #fff7e8, #ecdbba);
+            border-radius: 60px 25px 25px 60px;
+            padding: 40px 30px 40px 55px;
+            box-shadow: 
+                0 30px 50px rgba(0,0,0,0.6),
+                0 0 0 18px #b48b5a,
+                0 0 0 25px #6f4e2e,
+                inset 0 0 20px #ffe4bc;
+            border: 5px solid #e5cfb0;
             position: relative;
+            transition: all 0.3s;
         }
         .book:before {
             content: '';
             position: absolute;
-            left: 15px;
-            top: 35px;
-            bottom: 35px;
-            width: 10px;
-            background: #ad8b67;
-            border-radius: 20px;
+            left: 22px;
+            top: 50px;
+            bottom: 50px;
+            width: 12px;
+            background: linear-gradient(135deg, #8b6c47, #b48b5a, #6f4e2e);
+            border-radius: 30px;
+            box-shadow: inset -3px 0 8px #3b2e1e;
         }
         h1 {
-            font-size: 70px;
+            font-size: clamp(40px, 8vw, 80px);
+            color: #2b3a1f;
             text-align: center;
-            color: #342215;
-            text-shadow: 4px 4px 0 #b5926a;
-            margin-left: 20px;
+            margin-left: 30px;
+            text-shadow: 5px 5px 0 #c9a87c, 8px 8px 0 #7a6234;
+            letter-spacing: 2px;
+            font-weight: 900;
+            transform: rotate(-0.5deg);
         }
         .toc {
-            background: #e3cfb3;
-            padding: 25px;
-            border-radius: 50px 15px 15px 50px;
-            margin: 30px 0 30px 20px;
-            border: 4px solid #6f523b;
+            background: #e8d9c0;
+            border: 5px solid #9e8463;
+            border-radius: 70px 25px 25px 70px;
+            padding: 30px 20px 30px 45px;
+            margin: 35px 0 35px 20px;
+            box-shadow: inset 0 0 0 4px #fdefd4, 0 15px 0 #6f523b;
         }
         .toc-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 15px;
         }
         .story-btn {
-            background: #427a4b;
+            background: #487a4f;
             color: white;
             font-size: 24px;
-            padding: 15px 20px;
-            border-radius: 60px 20px 20px 60px;
-            border: 4px solid #ffd58c;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 80px 25px 25px 80px;
+            border: 5px solid #ffd98c;
             font-weight: bold;
-            box-shadow: 6px 6px 0 #1f3a22;
+            box-shadow: 8px 8px 0 #1f3f22;
             cursor: pointer;
-            transition: 0.05s;
-            flex: 1 1 200px;
+            transition: 0.05s linear;
+            flex: 1 1 220px;
+            text-shadow: 2px 2px 0 #1f3f22;
         }
         .story-btn:active {
-            transform: translate(4px,4px);
-            box-shadow: 2px 2px 0 #1f3a22;
+            transform: translate(6px, 6px);
+            box-shadow: 2px 2px 0 #1f3f22;
         }
         .viewer {
-            background: #fffef6;
-            border: 5px solid #be9f7b;
-            border-radius: 70px 20px 20px 70px;
-            padding: 30px;
+            background: #fffcf2;
+            border: 6px solid #d4b185;
+            border-radius: 90px 20px 20px 90px;
+            padding: 40px 30px 40px 55px;
             margin-left: 20px;
-            margin-bottom: 30px;
-            box-shadow: inset 0 0 0 3px #ffe3b0, 0 10px 0 #876e4f;
+            margin-bottom: 40px;
+            box-shadow: inset 0 0 0 5px #ffeac6, 0 18px 0 #8d6b44;
         }
         .story-title {
-            font-size: 48px;
-            color: #255025;
-            border-bottom: 4px dotted #8fbb8f;
+            font-size: 54px;
+            color: #295229;
+            border-left: 18px solid #5f9e6b;
+            padding-left: 25px;
+            margin-bottom: 20px;
+            font-weight: 800;
         }
         .story-text {
             font-size: 28px;
             line-height: 1.5;
-            margin: 20px 0;
+            color: #1f2f0f;
             white-space: pre-wrap;
-        }
-        .story-img {
-            max-width: 80%;
-            max-height: 400px;
-            border: 8px solid #ffd78c;
+            background: #fff9e6;
+            padding: 30px;
             border-radius: 50px;
-            box-shadow: 10px 10px 0 #6a4e32;
-            display: block;
+            border: 3px solid #b5956b;
+            margin-bottom: 25px;
+        }
+        .audio-block {
+            background: #e9dcc7;
+            border-radius: 90px;
+            padding: 15px 25px;
+            border: 5px solid #936e42;
+            box-shadow: inset 0 0 0 4px #fff2cf, 0 8px 0 #624a30;
+            margin: 25px 0 15px;
+        }
+        .audio-title {
+            font-size: 32px;
+            color: #364d36;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            font-weight: 600;
+        }
+        audio {
+            width: 100%;
+            height: 60px;
+            border-radius: 60px;
+            outline: none;
+            background: #ffe6b0;
+        }
+        audio::-webkit-media-controls-panel {
+            background: #ffd78c;
         }
         .nav {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
+            margin-left: 25px;
         }
         .nav-btn {
-            background: #d18f57;
-            font-size: 35px;
-            padding: 15px 30px;
-            border-radius: 80px;
-            border: 5px solid #ffe2af;
+            background: #d1975a;
+            font-size: 38px;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 70px;
+            border: 6px solid #ffdd9e;
             font-weight: bold;
-            box-shadow: 7px 7px 0 #784f2e;
+            box-shadow: 9px 9px 0 #734f2c;
             cursor: pointer;
+            transition: 0.05s;
+            color: #1a1a1a;
         }
         .nav-btn:active {
-            transform: translate(5px,5px);
-            box-shadow: 2px 2px 0 #784f2e;
+            transform: translate(7px, 7px);
+            box-shadow: 2px 2px 0 #734f2c;
+        }
+        .footer {
+            text-align: center;
+            font-size: 32px;
+            margin-top: 35px;
+            margin-left: 25px;
+            color: #fef7d6;
+            background: #3e6941;
+            padding: 20px;
+            border-radius: 100px;
+            border: 5px solid #ffd58c;
+            box-shadow: 0 10px 0 #2a412a;
         }
     </style>
 </head>
 <body>
-<div class="book" id="book">
-    <h1>🐱 КНИГА CRYPTOCAT</h1>
+<div class="book">
+    <h1>🎵 КНИГА ЗВУКОВ CRYPTOCAT</h1>
 
     <!-- ОГЛАВЛЕНИЕ -->
     <div class="toc">
@@ -132,66 +189,90 @@
 
     <!-- ПРОСМОТР -->
     <div class="viewer" id="viewer">
-        <div class="story-title" id="viewTitle"></div>
-        <div class="story-text" id="viewText"></div>
-        <img id="viewImage" class="story-img" style="display:none;">
+        <div class="story-title" id="viewTitle">🐱 Рассказ</div>
+        <div class="story-text" id="viewText">текст появится здесь</div>
+        
+        <!-- БЛОК АУДИО (будет заполняться) -->
+        <div id="audioContainer"></div>
     </div>
 
-    <!-- КНОПКИ НАВИГАЦИИ -->
+    <!-- КНОПКИ -->
     <div class="nav">
         <button class="nav-btn" id="prevBtn">◀ НАЗАД</button>
         <button class="nav-btn" id="nextBtn">ВПЕРЁД ▶</button>
+    </div>
+
+    <div class="footer">
+        🔊 нажми на название рассказа — и слушай
     </div>
 </div>
 
 <script>
 (function() {
+    // 📚 МАССИВ С РАССКАЗАМИ И ССЫЛКАМИ НА АУДИО
     let stories = [
-        { title: "📖 МАЛЬЧИК, КОТОРЫЙ НЕ БОЯЛСЯ РЖАВЧИНЫ", text: "В одном городе, где дома были высокими, а небо — узким, жил мальчик по имени Тим. Ему было 5 лет, и он очень любил гулять с дедушкой.\n\nДедушка был старый, но руки у него были золотые. Он мог починить всё: часы, стул, даже сломанный зонтик.\n\nОднажды они пошли гулять и зашли в странное место — там, где никто не ходил. Там пахло пылью, а вокруг лежали старые железки, колёса, провода и даже одна дверь без дома.\n\n— Дедушка, что это? — спросил Тим.\n— Это свалка, — ответил дед. — Но я называю её «кладовка».\n— А почему?\n— Потому что здесь лежит то, что может стать чем-то новым.\n\nТим посмотрел на ржавое колесо и спросил:\n— А это может стать новым?\n— Может, — улыбнулся дед. — Если не бояться.\n\nИ они взяли колесо домой. Дед достал инструменты, и они вместе почистили, покрасили, прикрутили… И получилась… машинка! Маленькая, но самая настоящая. Тим катал её по полу и смеялся.\n\nС тех пор каждые выходные они ходили в «кладовку». И каждый раз находили что-то, что можно было починить. Однажды — сломанный стул. В другой раз — лампу без света. А один раз — даже старый будильник, который зазвонил через неделю.\n\nТим перестал бояться:\n- грязи\n- ржавчины\n- того, что сломалось\n\nОн понял: если не бояться и попробовать починить — может получиться что-то классное.", image: "" },
-        { title: "☁️ Мечта 1", text: "Облако было похоже на хламолёт.", image: "" },
-        { title: "☁️ Мечта 2", text: "Облако было похоже на хламолёт.", image: "" },
-        { title: "☁️ Мечта 3", text: "Облако было похоже на хламолёт.", image: "" }
+        {
+            title: "🎧 Первый звук",
+            text: "",
+            audioUrl: "https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" // пример (3 сек)
+        },
+        {
+            title: "🌊 Шум моря",
+            text: "Волны накатывают на берег. Слышен крик чаек.",
+            audioUrl: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Creative_Commons/Scott_Holmes/Music_For_Media/Scott_Holmes_-_01_-_Creek_Walk.mp3"
+        },
+        {
+            title: "☔️ Дождь",
+            text: "Капли стучат по крыше. Тепло и уютно.",
+            audioUrl: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Creative_Comments/Kai_Engel/Satin/Kai_Engel_-_01_-_Satin.mp3"
+        }
     ];
 
     let currentIdx = 0;
 
     function renderToc() {
-        let toc = document.getElementById('tocGrid');
-        toc.innerHTML = "";
+        const toc = document.getElementById('tocGrid');
+        toc.innerHTML = '';
         stories.forEach((s, i) => {
-            let btn = document.createElement('button');
-            btn.className = "story-btn";
-            btn.innerText = s.title.length > 25 ? s.title.slice(0,22)+"…" : s.title;
-            btn.onclick = () => { currentIdx = i; displayStory(); };
+            const btn = document.createElement('button');
+            btn.className = 'story-btn';
+            btn.innerText = s.title;
+            btn.onclick = () => {
+                currentIdx = i;
+                displayStory();
+            };
             toc.appendChild(btn);
         });
     }
 
     function displayStory() {
         if (!stories.length) return;
-        let s = stories[currentIdx];
+        const s = stories[currentIdx];
         document.getElementById('viewTitle').innerText = s.title;
         document.getElementById('viewText').innerText = s.text;
-        let img = document.getElementById('viewImage');
-        if (s.image && s.image.startsWith('data:image')) {
-            img.src = s.image;
-            img.style.display = 'block';
+
+        const audioContainer = document.getElementById('audioContainer');
+        audioContainer.innerHTML = ''; // очищаем
+
+        if (s.audioUrl) {
+            audioContainer.innerHTML = `
+                <div class="audio-block">
+                    <div class="audio-title">🎤 слушать</div>
+                    <audio controls src="${s.audioUrl}">⚠️ аудио не поддерживается</audio>
+                </div>
+            `;
         } else {
-            img.style.display = 'none';
+            audioContainer.innerHTML = '';
         }
     }
 
-    function saveStories() {
-        localStorage.setItem('crypto_stories', JSON.stringify(stories));
-    }
-
     document.getElementById('prevBtn').onclick = () => {
-        if (!stories.length) return;
+        if (stories.length === 0) return;
         currentIdx = (currentIdx - 1 + stories.length) % stories.length;
         displayStory();
     };
     document.getElementById('nextBtn').onclick = () => {
-        if (!stories.length) return;
+        if (stories.length === 0) return;
         currentIdx = (currentIdx + 1) % stories.length;
         displayStory();
     };
